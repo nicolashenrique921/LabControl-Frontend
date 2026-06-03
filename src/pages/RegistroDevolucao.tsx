@@ -4,8 +4,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { PackageOpen, Save } from 'lucide-react'
 import api from '../api/client'
-import { useToast } from '../hooks/UseToast'
-import ToastContainer from '../components/ui/Toastcontainer'
+import { useToast } from '../hooks/useToast'
+import ToastContainer from '../components/ui/ToastContainer'
 
 interface Tecnico { id: number; nome: string }
 interface Equipamento { id: number; marca: string; tipo: string }

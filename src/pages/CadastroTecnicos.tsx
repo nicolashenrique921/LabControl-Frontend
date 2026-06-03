@@ -4,9 +4,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { Users, Plus, Pencil, Trash2, Save, X } from 'lucide-react'
 import api from '../api/client'
-import { useToast } from '../hooks/UseToast.ts'
-import ToastContainer from '../components/ui/Toastcontainer.tsx'
-import ConfirmDialog from '../components/ui/Confirmdialog.tsx'
+import { useToast } from '../hooks/useToast.ts'
+import ToastContainer from '../components/ui/ToastContainer.tsx'
+import ConfirmDialog from '../components/ui/ConfirmDialog.tsx'
 
 interface Tecnico { id: number; nome: string; ativo: boolean; criado_em: string }
 
