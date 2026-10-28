@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .bg-grid-blueprint {
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+        background-size: 32px 32px;
+
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+
+    .corner-brackets {
+        position: relative;
+    }
+
+    .corner-brackets::before,
+    .corner-brackets::after {
+        content: '';
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border-color: theme('colors.signal.DEFAULT');
+        opacity: 0.6;
+    }
+
+    .corner-brackets::before {
+        top: -1px;
+        left: -1px;
+        border-top: 2px solid;
+        border-left: 2px solid;
+    }
+
+    .corner-brackets::after {
+        bottom: -1px;
+        right: -1px;
+        border-bottom: 2px solid;
+        border-right: 2px solid;
+    }
+
+    .bg-grid-light {
+        background-image:
+            linear-gradient(rgba(14, 58, 92, 0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(14, 58, 92, 0.06) 1px, transparent 1px);
+        background-size: 32px 32px;
+    }
+}
+
+@keyframes pulso-status {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.5);
+    }
+
+    50% {
+        opacity: 0.7;
+        box-shadow: 0 0 0 4px rgba(52, 211, 153, 0);
+    }
+}
+
+.led-pulse-success {
+    animation: pulso-status 1.8s ease-in-out infinite;
+}
+
+.led-pulse-error {
+    animation: pulso-status 1.8s ease-in-out infinite;
+    background-color: theme('colors.status.error') !important;
+    box-shadow: 0 0 0 0 rgba(248, 113, 113, 0.5);
+}
+
+@keyframes sinal-viajando {
+    0% {
+        stroke-dashoffset: 240;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.linha-sinal {
+    stroke-dasharray: 6 10;
+    animation: sinal-viajando 3s linear infinite;
+}
